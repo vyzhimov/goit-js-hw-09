@@ -2,16 +2,16 @@ const btnStart = document.querySelector('button[data-start]');
 const btnStop = document.querySelector('button[data-stop]');
 const body = document.querySelector('body');
 btnStop.disabled = true;
-let timer = null;
+let timerId = null;
 
 btnStart.addEventListener('click', () => {
-  timer = setInterval(changeBodyColor, 1000);
+  timerId = setInterval(changeBodyColor, 1000);
   btnStart.disabled = true;
   btnStop.disabled = false;
 });
 
 btnStop.addEventListener('click', () => {
-  clearInterval(timer);
+  clearInterval(timerId);
   btnStart.disabled = false;
   btnStop.disabled = true;
 });
